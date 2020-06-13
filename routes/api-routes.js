@@ -1,13 +1,13 @@
 //var authController = require("../controllers/authcontroller.js");
 
 module.exports = function(app, passport) {
-  console.log("this is opassoirt in apiroutes!!");
+  console.log("this is passport in api-routes!!");
   app.get("/signup", function(req, res) {
-    res.send("singup pageeee");
+    res.send("Sign-Up Page");
   });
 
   app.get("/signin", function(req, res) {
-    res.send("sign in pageee");
+    res.send("Sign-In Page");
   });
 
   app.post(

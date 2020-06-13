@@ -5,14 +5,36 @@ var session = require("express-session");
 var bodyParser = require("body-parser");
 //var env = require("dotenv").load();
 //var exphbs = require("express-handlebars");
+const logger = require("morgan");
 
+const PORT = process.env.PORT || 3000;
+const db = require("./models");
+
+// const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+
+app.use(logger("dev"));
+
+require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
+
+// google maps api
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 7,
+  });
+}
 //For BodyParser
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-app.use(bodyParser.json());
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: true,
+//   })
+// );
+// app.use(bodyParser.json());
 
 // For Passport
 app.use(
@@ -41,11 +63,11 @@ app.get("/", function(req, res) {
 
 //Models
 var models = require("./models");
-console.log("THIS IS MODELS in server.js file", models.user);
+console.log("THIS IS MODELS in server.js file", models);
 
 //Routes
 
-var authRoute = require("./routes/api-routes.js")(app, passport);
+require("./routes/api-routes.js")(app, passport);
 
 //load passport strategies
 
@@ -62,7 +84,15 @@ models.sequelize
     console.log(err, "Something went wrong with the Database Update!");
   });
 
-app.listen(8080, function(err) {
-  if (!err) console.log("Site is live");
-  else console.log(err);
+// app.listen(3000, function(err) {
+//   if (!err) console.log("Site is live");
+//   else console.log(err);
+// });
+
+app.listen(PORT, () => {
+  console.log(
+    "Listening on port %s. Visit http://localhost:%s/ in your browser.",
+    PORT,
+    PORT
+  );
 });

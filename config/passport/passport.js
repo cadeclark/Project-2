@@ -118,8 +118,8 @@ module.exports = function(passport, user) {
   });
 
   passport.deserializeUser(function(id, done) {
-    console.log("THIS IS USER!! in deseralile", User);
-    console.log("this is user iwht lil u", user);
+    console.log("this is user with an upper case U", User);
+    console.log("this is user with a  lowercase u", user);
     user.findById(id).then(function(user) {
       if (user) {
         done(null, user.get());
