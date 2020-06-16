@@ -1,7 +1,7 @@
 body {
     font-family: 'Anton', sans-serif;
     font-size: 30px;
-    background-color: #ff652f !important;
+    background-color: #41403f !important;
 }
 
 .navbar {
@@ -61,4 +61,13 @@ border-color: white;
 
 .text{
     text-align: center;
+}
+
+.register-login-text {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
