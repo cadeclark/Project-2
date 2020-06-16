@@ -9,6 +9,13 @@ module.exports = {
             return res.json(dbEvents)
         })
     },
+    findAll: function(req,res){
+        db.Event.findAll({
+
+        }).then(dbEvents =>{
+            return res.json(dbEvents)
+        })
+    },
     create: function(req, res){
         db.Event.create({
             name: req.body.name, 

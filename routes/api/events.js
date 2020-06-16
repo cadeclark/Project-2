@@ -7,5 +7,7 @@ router
   .route("/:id")
   .get(eventsController.findById)
   .patch(eventsController.update);
+router.route("/")
+    .get(eventsController.findAll)
 router.route("/remove/:id").delete(eventsController.delete);
 module.exports = router;
