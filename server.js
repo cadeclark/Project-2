@@ -20,25 +20,6 @@ app.use(logger("dev"));
 app.use(routes)
 
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
-
-// require("./routes/api-routes.js")(app);
-
-// google maps api
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 7,
-  });
-}
-//For BodyParser
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
-// app.use(bodyParser.json());
 
 // For Passport
 app.use(
@@ -67,7 +48,7 @@ app.get("/", function(req, res) {
 
 //Models
 var models = require("./models");
-console.log("THIS IS MODELS in server.js file", models);
+// console.log("THIS IS MODELS in server.js file", models);
 
 //Routes
 
