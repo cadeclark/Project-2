@@ -9,6 +9,15 @@ module.exports = {
             return res.json(dbEvents)
         })
     },
+    findByCreator: function(req,res){
+        db.Event.findAll({
+            where: {
+                creator: req.params.creator
+            }
+        }).then(dbEvents =>{
+            return res.json(dbEvents)
+        })
+    },
     findAll: function(req,res){
         db.Event.findAll({
 
