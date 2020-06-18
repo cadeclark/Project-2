@@ -18,7 +18,14 @@ $(".list-group").click((event) => {
     let data = idData[0]
     console.log(idData[0])
     let el = `
-    <p class="list-group-item list-group-item-action list-group-item-secondary">Name: ${data.name} location: ${data.location} Time: ${data.time} Creator: ${data.creator}</p>
+    <div class="col-lg-7" id="event-info">
+        <h1 class="event-titles" id="event-info">Event info</h1>
+        <h3 class="anton" id="event-creator">Created by: ${data.creator}</h3>
+        <br>
+        <h3 class="anton" id="event-time">Time: ${data.time}</h3>
+        <br>
+        <h3 class="anton" id="event-location">Location: ${data.location}</h3>
+      </div>
     `;
     $("#event-info").append(el);
   })
