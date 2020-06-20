@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="./stylesheets/style.css"/>
+  <link rel="stylesheet" href="./stylesheets/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <!-- Nav Bar Goes Here -->
+  <!-- Nav Bar Goes Here -->
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a1a1d;">
-  
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,19 +37,19 @@
         </li>
 
         <!-- Modal to give instructions how to use website -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Instructions</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">About I Like To Party!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">This is how to use website:</div>
+              <div class="modal-body">The I like to Party! app will allow you to create new events and to list all of the events that are going on. It gives you a basic time, location, and who created the event.</div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
             </div>
           </div>
@@ -59,47 +59,69 @@
 
       </ul>
     </div>
-      <a class="navbar-brand  " id="projectBrand" href="#">Project 2</a>
-      <span class="navbar-text">
-        <a href="/login">Login</a>
-        /
-        <a href="/register">Register</a>
-      </span>
-    
+    <a class="navbar-brand  " id="projectBrand" href="#">Project 2</a>
+    <span class="navbar-text">
+      <a href="/login">Login</a>
+      /
+      <a href="/register">Register</a>
+    </span>
+
   </nav>
 
-  <!-- Main Body Goes Here -->
- 
-  <div class="register-login-text"> Register here to create and edit your own events!</div>
-  <!-- Username Field -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-2"></div>
+
+      <div class="col-lg-8">
+
+
+        <!-- Simple Text Fields -->
+
+        <div class="register-login-text">Create A New Event</div>
+
+
+        <!-- Event Name Field -->
+        <form action="/register" method="POST">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fas fa-user-friends"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-              aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id="event-name" placeholder="Event Name" aria-label="Username"
+              aria-describedby="basic-addon1" required>
           </div>
-  <!-- Password Field -->
+          <!-- Created By Field -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+            <input type="text" class="form-control" id="created-by" placeholder="Your Name" aria-label="Password"
               aria-describedby="basic-addon1">
           </div>
-  <!-- Email Field -->
+          <!-- Event Time Field -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+            <input type="text" class="form-control" id="event-time" placeholder="Time" aria-label="Email"
               aria-describedby="basic-addon1">
           </div>
-  
-          <button type="button" class="btn btn-dark">Register</button>
-  
-        </div>
-  
+          <!-- Event Location -->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="text" class="form-control" id="event-location" placeholder="Location" aria-label="Email"
+              aria-describedby="basic-addon1">
+          </div>
+
+        </form>
+        <button type="submit" class="btn btn-dark">Submit</button>
+
+      </div>
+    </div>
+  </div>
+
+
 
   <div class="footer">
     <p>I Like to Party! &copy; 2020</p>

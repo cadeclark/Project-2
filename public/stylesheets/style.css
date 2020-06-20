@@ -72,12 +72,18 @@ border-color: white;
   padding-bottom: 10px;
 }
 
-#all-events-title {
+.event-titles {
   font-family: 'Anton', sans-serif;
   color: white;
   text-align: center;
+  text-decoration: underline;
 }
 
 #event-info {
 background-color: rgb(126, 126, 126);
+}
+
+.anton {
+  font-family: 'Anton', sans-serif;
+  color: white;
 }
