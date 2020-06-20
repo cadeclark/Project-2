@@ -34,6 +34,10 @@ module.exports = function(app) {
   app.get("/create_event", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/createEvent.html"));
   });
+
+  app.get("/your_events", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/yourEvents.html"));
+  });
 };
 
 // const path = require("path");
