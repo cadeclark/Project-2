@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-var passport = require("passport");
 var session = require("express-session");
 var bodyParser = require("body-parser");
 const logger = require("morgan");
@@ -10,25 +9,18 @@ const PORT = process.env.PORT || 3000;
 const db = require("./models");
 var exphbs = require("express-handlebars");
 
+const passport = require("./config/passport");
+
 // const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-
 app.use(logger("dev"));
 app.use(routes);
 
+// Requiring our Routes
 require("./routes/html-routes.js")(app);
-
-// //For Handlebars
-// app.set("views", "./app/views");
-// app.engine(
-//   "hbs",
-//   exphbs({
-//     extname: ".hbs",
-//   })
-// );
-// app.set("view engine", ".hbs");
+require("./routes/html-routes.js")(app);
 
 // For Passport
 app.get("/", (req, res) => {
@@ -68,8 +60,6 @@ var authRoute = require("./routes/auth.js")(app);
 require("./routes/api-routes.js")(app, passport);
 
 //load passport strategies
-
-require("./config/passport/passport.js")(passport, models.user);
 
 //Sync Database
 db.sequelize.sync({ force: false }).then(function() {
