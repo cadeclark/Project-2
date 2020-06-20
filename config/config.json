@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": null,
+    "password": "password",
 
     "database": "i_like_to_party_db",
 
