@@ -31,10 +31,6 @@ app.get("/", (req, res) => {
   res.render("login.html");
 });
 
-app.post("/register", (req, res) => {
-  req.body.id;
-});
-
 app.use(
   session({
     secret: "keyboard cat",
@@ -62,6 +58,7 @@ require("./routes/api-routes.js")(app, passport);
 //load passport strategies
 
 //Sync Database
+
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log(

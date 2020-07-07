@@ -10,8 +10,8 @@ var db = {};
 // var passport = require("passport");
 // var routes = require("../routes/index")(passport);
 
-if (config.use_env_variable) {
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
+if (process.env.NODE_ENV) {
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   var sequelize = new Sequelize(
     config.database,
