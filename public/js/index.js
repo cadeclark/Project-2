@@ -1,6 +1,6 @@
 
 // events call
-findAllEvents = () => {
+const findAllEvents = () => {
   $.get("/api/events/").then((eventData) => {
     console.log(eventData);
     for (let i = 0; i < eventData.length; i++) {
@@ -31,7 +31,7 @@ $(".list-group").click((event) => {
   })
 });
 // function to find all events by creator
-findByCreator = (creator) => {
+const findByCreator = (creator) => {
   $.get(`/api/events/creator/${creator}`).then((eventData) => {
     console.log(eventData);
   });
