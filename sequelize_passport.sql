@@ -1,1 +1,1 @@
-CREATE DATABASE sequelize_passport;
+CREATE DATABASE i_like_to_party_db;
